@@ -1,6 +1,4 @@
-/* ROOFERS & DECOR INTERIORS - MODERN EXECUTIVE STYLE
-   Vibrant, Professional, Responsive
-*/
+/* JACK INTERIORS & FITTINGS - MASTER STYLE */
 
 :root {
   --primary-dark: #0f172a;  /* Deep Executive Navy */
@@ -69,8 +67,8 @@ nav a:hover {
 
 /* HERO SECTION */
 .hero {
-  background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url('d/d1.jpg') center/cover no-repeat;
-  height: 80vh;
+  background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url('./d/d1.jpg') center/cover no-repeat;
+  height: 60vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -85,11 +83,12 @@ nav a:hover {
   max-width: 800px;
   margin-bottom: 10px;
   line-height: 1.2;
+  color: var(--accent-gold);
 }
 
 .hero p {
   font-size: 1.2rem;
-  color: var(--accent-gold);
+  color: var(--white);
   letter-spacing: 2px;
 }
 
@@ -142,12 +141,10 @@ nav a:hover {
   border-radius: 6px;
   box-shadow: 0 10px 20px rgba(15, 23, 42, 0.08);
   transition: 0.4s ease;
-  filter: grayscale(10%);
 }
 
 .grid img:hover {
   transform: scale(1.03);
-  filter: grayscale(0%);
   box-shadow: 0 15px 30px rgba(37, 99, 235, 0.15);
 }
 
