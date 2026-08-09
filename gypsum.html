@@ -84,26 +84,21 @@
             font-size: 1.2rem;
             color: #4a5568;
         }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-        .grid-card {
-            background-color: #ffffff;
-            padding: 10px;
-            border-radius: 4px;
-            box-shadow: 0 6px 20px rgba(27, 38, 59, 0.06);
-            border: 1px solid #dcd7ce;
-            transition: transform 0.3s ease;
-        }
-        .grid-card:hover {
-            transform: translateY(-4px);
-        }
-        .grid-card img {
+        .featured-photo {
             width: 100%;
-            height: 260px;
+            max-width: 750px;
+            margin: 0 auto;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(27, 38, 59, 0.08);
+            border: 1px solid #dcd7ce;
+            background-color: #ffffff;
+            padding: 8px;
+        }
+        .featured-photo img {
+            width: 100%;
+            height: auto;
+            max-height: 420px;
             object-fit: cover;
             display: block;
             border-radius: 2px;
@@ -176,7 +171,7 @@
         @media (max-width: 768px) {
             header h1 { font-size: 1.3rem; letter-spacing: 2px; }
             .section { padding: 40px 15px; }
-            .grid-card img { height: 220px; }
+            .featured-photo img { max-height: 260px; }
         }
     </style>
 </head>
@@ -201,16 +196,8 @@
         Transform your living rooms, offices, and commercial spaces with our modern gypsum ceiling designs. We specialize in elegant bulkheads, recessed LED lighting troughs, stylish TV wall units, and flawless partitioning.
     </p>
 
-    <div class="grid">
-        <div class="grid-card">
-            <img src="d/d4.jpg" alt="Gypsum Design 1">
-        </div>
-        <div class="grid-card">
-            <img src="d/d5.jpg" alt="Gypsum Design 2">
-        </div>
-        <div class="grid-card">
-            <img src="d/d6.jpg" alt="Gypsum Design 3">
-        </div>
+    <div class="featured-photo">
+        <img src="d/4.jpg" alt="Featured Gypsum Ceiling Design">
     </div>
 </div>
 
