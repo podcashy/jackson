@@ -27,6 +27,27 @@
         .share-btn:hover {
             transform: scale(1.1);
         }
+        /* Mobile-optimized single photo showcase */
+        .featured-photo {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
+        }
+        .featured-photo img {
+            width: 100%;
+            height: auto;
+            max-height: 450px;
+            object-fit: cover;
+            display: block;
+        }
+        @media (max-width: 768px) {
+            .featured-photo img {
+                max-height: 280px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -39,7 +60,7 @@
         <a href="gypsum.html">Gypsum</a>
         <a href="doors.html">Doors</a>
         <a href="interiors.html">Interiors</a>
-        <a href="gallary.html">Videos</a>
+        <a href="gallary.html">Gallery</a>
         <a href="contact.html">Contact</a>
     </nav>
 </header>
@@ -57,10 +78,8 @@
         Welcome to <strong>Jack Interiors & Fittings</strong>. Based in Nairobi, we specialize in transforming residential and commercial spaces with precision and class. Our work is defined by quality, durability, and aesthetic perfection.
     </p>
 
-    <div class="grid">
-        <img src="d/1.jpg" alt="Jack Interiors Project 1">
-        <img src="d/2.jpg" alt="Jack Interiors Project 2">
-        <img src="d/3.jpg" alt="Jack Interiors Project 3">
+    <div class="featured-photo">
+        <img src="d/1.jpg" alt="Jack Interiors Featured Project">
     </div>
 </div>
 
