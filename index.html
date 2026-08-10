@@ -143,7 +143,7 @@
             border-radius: 2px;
         }
 
-/* LIGHTBOX MODAL */
+        /* LIGHTBOX MODAL - FULL HEIGHT SCROLLABLE */
         #lightbox {
             display: none;
             position: fixed;
@@ -153,37 +153,51 @@
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.9);
-            justify-content: center;
-            align-items: center;
-            padding: 10px;
+            overflow-y: auto;
+            padding: 40px 10px;
             box-sizing: border-box;
+            text-align: center;
         }
         #lightbox img {
-            max-width: 95%;
-            max-height: 85vh;
+            max-width: 90%;
             width: auto;
             height: auto;
-            object-fit: contain;
+            max-height: none;
+            object-fit: fill;
             border-radius: 4px;
             box-shadow: 0 5px 25px rgba(0,0,0,0.5);
             border: 2px solid #c5a059;
+            display: inline-block;
+            vertical-align: middle;
+            margin: 20px 0;
+        }
+        #lightbox::before {
+            content: '';
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+            margin-right: -0.25em;
         }
         #lightbox span {
-            position: absolute;
+            position: fixed;
             top: 15px;
             right: 20px;
             color: #ffffff;
-            font-size: 40px;
+            font-size: 30px;
             font-weight: bold;
             cursor: pointer;
             transition: color 0.3s ease;
             z-index: 10001;
+            background: rgba(0,0,0,0.6);
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            line-height: 45px;
+            text-align: center;
         }
         #lightbox span:hover {
             color: #c5a059;
-        }
-        #lightbox span:hover {
-            color: #c5a059;
+            background: rgba(255,255,255,0.2);
         }
 
         footer {
@@ -287,16 +301,18 @@
         <p class="intro-text">
             Welcome to <strong>Jack Interiors & Fittings</strong>. Based in Nairobi, we specialize in transforming residential and commercial spaces with precision and class. Our work is defined by quality, durability, and aesthetic perfection. Click any photo below to view it in full size.
         </p>
-<div style="max-width: 700px; margin: 30px auto 40px; text-align: left; background: #ffffff; padding: 25px 35px; border: 1px solid #e2ddd5; border-radius: 4px; box-shadow: 0 4px 15px rgba(27, 38, 59, 0.04);">
-        <p style="margin: 0 0 15px 0; font-weight: 700; color: #1b263b; font-size: 1.1rem; letter-spacing: 0.5px; text-transform: uppercase;">We specialize in the following:</p>
-        <ul style="margin: 0; padding-left: 20px; color: #4a5568; font-size: 1.05rem; line-height: 1.8;">
-            <li style="margin-bottom: 8px;"><strong>Roofing:</strong> Installation and repair.</li>
-            <li style="margin-bottom: 8px;"><strong>Gypsum Works:</strong> Ceilings, partitions, and decorative designs.</li>
-            <li style="margin-bottom: 8px;"><strong>Doors:</strong> Premium doors of all types and custom fittings.</li>
-            <li style="margin-bottom: 8px;"><strong>Interior Design:</strong> Comprehensive finishing and aesthetic transformation.</li>
-            <li style="margin-bottom: 0;"><span style="color: #c5a059; font-weight: 600;">And much more...</span></li>
-        </ul>
-    </div>
+
+        <div style="max-width: 700px; margin: 30px auto 40px; text-align: left; background: #ffffff; padding: 25px 35px; border: 1px solid #e2ddd5; border-radius: 4px; box-shadow: 0 4px 15px rgba(27, 38, 59, 0.04);">
+            <p style="margin: 0 0 15px 0; font-weight: 700; color: #1b263b; font-size: 1.1rem; letter-spacing: 0.5px; text-transform: uppercase;">We specialize in the following:</p>
+            <ul style="margin: 0; padding-left: 20px; color: #4a5568; font-size: 1.05rem; line-height: 1.8;">
+                <li style="margin-bottom: 8px;"><strong>Roofing:</strong> Installation and repair.</li>
+                <li style="margin-bottom: 8px;"><strong>Gypsum Works:</strong> Ceilings, partitions, and decorative designs.</li>
+                <li style="margin-bottom: 8px;"><strong>Doors:</strong> Premium doors of all types and custom fittings.</li>
+                <li style="margin-bottom: 8px;"><strong>Interior Design:</strong> Comprehensive finishing and aesthetic transformation.</li>
+                <li style="margin-bottom: 0;"><span style="color: #c5a059; font-weight: 600;">And much more...</span></li>
+            </ul>
+        </div>
+
         <div class="photo-grid">
             <div class="featured-photo" onclick="openLightbox('d/6.jpg')">
                 <img src="d/6.jpg" alt="Jack Interiors Featured Project 1">
@@ -335,7 +351,7 @@
 <script>
     function openLightbox(src) {
         document.getElementById('lightbox-img').src = src;
-        document.getElementById('lightbox').style.display = 'flex';
+        document.getElementById('lightbox').style.display = 'block';
     }
     function closeLightbox() {
         document.getElementById('lightbox').style.display = 'none';
