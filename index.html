@@ -143,7 +143,7 @@
             border-radius: 2px;
         }
 
-        /* LIGHTBOX MODAL */
+/* LIGHTBOX MODAL */
         #lightbox {
             display: none;
             position: fixed;
@@ -152,28 +152,35 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.85);
+            background-color: rgba(0, 0, 0, 0.9);
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            padding: 10px;
             box-sizing: border-box;
         }
         #lightbox img {
-            max-width: 90%;
-            max-height: 90vh;
+            max-width: 95%;
+            max-height: 85vh;
+            width: auto;
+            height: auto;
+            object-fit: contain;
             border-radius: 4px;
             box-shadow: 0 5px 25px rgba(0,0,0,0.5);
             border: 2px solid #c5a059;
         }
         #lightbox span {
             position: absolute;
-            top: 20px;
-            right: 30px;
+            top: 15px;
+            right: 20px;
             color: #ffffff;
             font-size: 40px;
             font-weight: bold;
             cursor: pointer;
             transition: color 0.3s ease;
+            z-index: 10001;
+        }
+        #lightbox span:hover {
+            color: #c5a059;
         }
         #lightbox span:hover {
             color: #c5a059;
