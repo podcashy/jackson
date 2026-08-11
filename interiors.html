@@ -3,217 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interiors & Cabinetry | Jack Interiors & Fittings</title>
+    <title>Interiors & Sound Proofing | Jack Interiors & Fittings</title>
     <style>
-        /* INLINE CLASSIC EXECUTIVE OVERRIDES */
-        body {
-            margin: 0;
-            font-family: 'Garamond', 'Georgia', serif;
-            background-color: #f9f8f6;
-            color: #2d3748;
-            line-height: 1.7;
-        }
-        header {
-            background-color: #1b263b !important;
-            color: #ffffff !important;
-            padding: 1.8rem 1rem;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            text-align: center;
-            border-bottom: 3px solid #c5a059 !important;
-            box-shadow: 0 4px 15px rgba(27, 38, 59, 0.25);
-        }
-        header h1 {
-            margin: 0;
-            font-size: 1.8rem;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: #c5a059 !important;
-            font-weight: 700;
-        }
-        nav {
-            margin-top: 15px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-        nav a {
-            color: #ffffff !important;
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            padding: 4px 8px;
-            transition: 0.3s ease;
-        }
-        nav a:hover {
-            color: #c5a059 !important;
-            border-bottom: 1px solid #c5a059;
-        }
-        .section {
-            padding: 70px 20px;
-            max-width: 900px;
-            margin: auto;
-            text-align: center;
-            background-color: #f9f8f6;
-        }
-        .section h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 12px;
-            color: #1b263b !important;
-            letter-spacing: 1px;
-        }
-        .section h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 2px;
-            background-color: #c5a059;
-        }
-        .intro-text {
-            max-width: 700px;
-            margin: 0 auto 40px;
-            font-size: 1.2rem;
-            color: #4a5568;
-        }
-        .featured-photo {
-            width: 100%;
-            max-width: 750px;
-            margin: 0 auto;
-            border-radius: 4px;
-            overflow: hidden;
-            box-shadow: 0 8px 25px rgba(27, 38, 59, 0.08);
-            border: 1px solid #dcd7ce;
-            background-color: #ffffff;
-            padding: 8px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        .featured-photo:hover {
-            transform: translateY(-4px);
-        }
-        .featured-photo img {
-            width: 100%;
-            height: auto;
-            max-height: 420px;
-            object-fit: cover;
-            display: block;
-            border-radius: 2px;
-        }
+        body { margin: 0; font-family: 'Garamond', 'Georgia', serif; background-color: #f9f8f6; color: #2d3748; line-height: 1.7; }
+        header { background-color: #1b263b !important; color: #ffffff !important; padding: 1.8rem 1rem; position: sticky; top: 0; z-index: 1000; text-align: center; border-bottom: 3px solid #c5a059 !important; box-shadow: 0 4px 15px rgba(27, 38, 59, 0.25); }
+        header h1 { margin: 0; font-size: 1.8rem; letter-spacing: 4px; text-transform: uppercase; color: #c5a059 !important; font-weight: 700; }
+        nav { margin-top: 15px; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+        nav a { color: #ffffff !important; text-decoration: none; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; padding: 4px 8px; transition: 0.3s ease; }
+        nav a:hover { color: #c5a059 !important; border-bottom: 1px solid #c5a059; }
+        
+        .section { padding: 70px 20px; max-width: 1000px; margin: auto; text-align: center; }
+        .section h2 { font-size: 2rem; margin-bottom: 20px; position: relative; padding-bottom: 12px; color: #1b263b !important; letter-spacing: 1px; }
+        .section h2::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 2px; background-color: #c5a059; }
+        
+        .intro-text { max-width: 800px; margin: 0 auto 40px; font-size: 1.15rem; color: #4a5568; text-align: left; }
+        
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .gallery-item { background-color: #ffffff; border-radius: 4px; overflow: hidden; box-shadow: 0 8px 25px rgba(27, 38, 59, 0.08); border: 1px solid #dcd7ce; padding: 8px; cursor: pointer; transition: transform 0.3s ease; }
+        .gallery-item:hover { transform: translateY(-4px); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; border-radius: 2px; }
 
-        /* LIGHTBOX MODAL */
-        #lightbox {
-            display: none;
-            position: fixed;
-            z-index: 10000;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.85);
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        #lightbox img {
-            max-width: 90%;
-            max-height: 90vh;
-            border-radius: 4px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.5);
-            border: 2px solid #c5a059;
-        }
-        #lightbox span {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            color: #ffffff;
-            font-size: 40px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
-        #lightbox span:hover {
-            color: #c5a059;
-        }
+        /* LIGHTBOX */
+        #lightbox { display: none; position: fixed; z-index: 10000; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.85); justify-content: center; align-items: center; padding: 20px; box-sizing: border-box; }
+        #lightbox img { max-width: 90%; max-height: 90vh; border-radius: 4px; border: 2px solid #c5a059; }
+        #lightbox span { position: absolute; top: 20px; right: 30px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; }
 
-        footer {
-            background-color: #1b263b !important;
-            color: #cbd5e1 !important;
-            text-align: center;
-            padding: 55px 20px;
-            font-size: 0.95rem;
-            border-top: 3px solid #c5a059 !important;
-        }
-        footer p {
-            margin: 8px 0;
-        }
-        footer p:first-child {
-            color: #c5a059 !important;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-        .whatsapp {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            background-color: #25D366 !important;
-            color: #ffffff !important;
-            border: 2px solid #ffffff !important;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 26px;
-            text-decoration: none;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            z-index: 9999;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-        }
-        .whatsapp:hover {
-            transform: scale(1.1);
-            background-color: #20ba5a !important;
-        }
-        .share-btn {
-            position: fixed;
-            bottom: 95px;
-            right: 25px;
-            background-color: #1b263b !important;
-            color: #c5a059 !important;
-            border: 2px solid #c5a059 !important;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
-            text-decoration: none;
-            z-index: 2000;
-            box-shadow: 0 4px 15px rgba(27, 38, 59, 0.3);
-            transition: transform 0.3s ease, background-color 0.3s ease;
-        }
-        .share-btn:hover {
-            transform: scale(1.1);
-            background-color: #c5a059 !important;
-            color: #1b263b !important;
-        }
-        @media (max-width: 768px) {
-            header h1 { font-size: 1.3rem; letter-spacing: 2px; }
-            .section { padding: 40px 15px; }
-            .featured-photo img { max-height: 260px; }
-        }
+        footer { background-color: #1b263b !important; color: #cbd5e1 !important; text-align: center; padding: 55px 20px; border-top: 3px solid #c5a059 !important; font-size: 0.95rem; }
+        .whatsapp, .share-btn { position: fixed; right: 25px; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 9999; box-shadow: 0 4px 15px rgba(0,0,0,0.3); text-decoration: none; transition: transform 0.3s ease; }
+        .whatsapp { bottom: 25px; background-color: #25D366 !important; color: #fff !important; }
+        .share-btn { bottom: 95px; background-color: #007bff !important; color: #fff !important; }
     </style>
 </head>
 <body>
@@ -224,7 +42,7 @@
         <a href="index.html">Home</a>
         <a href="roofing.html">Roofing</a>
         <a href="gypsum.html">Gypsum</a>
-        <a href="doors.html">Cyclones</a>
+        <a href="cyclones.html">Cyclones</a>
         <a href="interiors.html">Interiors</a>
         <a href="gallary.html">Gallery</a>
         <a href="contact.html">Contact</a>
@@ -232,38 +50,44 @@
 </header>
 
 <div class="section">
-    <h2>Bespoke Interiors & Cabinetry</h2>
-    <p class="intro-text">
-        Maximize your storage and aesthetic appeal with our custom-built wardrobes, modern kitchen cabinets, and functional architectural fittings. Every piece is meticulously crafted to fit your lifestyle and space. Click the photo below to view it in full size.
-    </p>
+    <h2>Interiors & Sound Proofing</h2>
+    <div class="intro-text">
+        <p>Elevate your indoor environment with our expert interior design fittings and specialized soundproofing solutions. At <strong>Jack Interiors & Fittings</strong>, we engineer spaces that balance aesthetic luxury with acoustic comfort. Whether you are setting up a private office, a home entertainment room, a recording studio, or a quiet residential sanctuary, our advanced sound dampening materials and meticulous interior finishes block unwanted external noise while enhancing internal clarity and style.</p>
+    </div>
 
-    <div class="featured-photo" onclick="openLightbox('d/7.jpg')">
-        <img src="d/7.jpg" alt="Featured Interior Cabinetry Design">
+    <div class="gallery-grid">
+        <script>
+            // Interior & Sound Proof photos: 35 to 38
+            for(let i = 35; i <= 38; i++) {
+                document.write(`
+                    <div class="gallery-item" onclick="openLightbox('d/${i}.jpeg')">
+                        <img src="d/${i}.jpeg" alt="Interiors and Sound Proof Project ${i}">
+                    </div>
+                `);
+            }
+        </script>
     </div>
 </div>
 
-<!-- LIGHTBOX MODAL -->
 <div id="lightbox" onclick="closeLightbox()">
     <span onclick="closeLightbox()">&times;</span>
     <img id="lightbox-img" src="" alt="Enlarged View">
 </div>
 
 <footer>
-    <p>JACK INTERIORS & FITTINGS</p>
+    <p style="color:#c5a059; font-weight:700; letter-spacing:2px; text-transform:uppercase;">JACK INTERIORS & FITTINGS</p>
     <p>Avon Centre, Enterprise Road, Industrial Area – Nairobi | Tel: 0703 894 897, 0728 275 840</p>
     
-    <!-- Social Media Links -->
-    <div style="margin: 15px 0; display: flex; justify-content: center; gap: 25px;">
-        <a href="https://www.facebook.com/people/Jack-Interiors-and-Fittings/61592989888671/" target="_blank" style="color: #c5a059 !important; text-decoration: none; font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; transition: opacity 0.3s ease;">Facebook</a>
-        <a href="https://www.instagram.com" target="_blank" style="color: #c5a059 !important; text-decoration: none; font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; transition: opacity 0.3s ease;">Instagram</a>
-        <a href="https://www.youtube.com" target="_blank" style="color: #c5a059 !important; text-decoration: none; font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; transition: opacity 0.3s ease;">YouTube</a>
+    <div style="margin: 15px 0; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+        <a href="https://www.facebook.com/people/Jack-Interiors-and-Fittings/61592989888671/" target="_blank" style="color: #c5a059 !important; text-decoration: none; font-size: 13px; font-weight: 600; text-transform: uppercase;">Facebook</a>
+        <a href="https://www.instagram.com/everlyne5554/" target="_blank" style="color: #c5a059 !important; text-decoration: none; font-size: 13px; font-weight: 600; text-transform: uppercase;">Instagram</a>
+        <a href="https://youtube.com/@everlynemueni-u7p?si=FOhoGtIVku75fcsg" target="_blank" style="color: #c5a059 !important; text-decoration: none; font-size: 13px; font-weight: 600; text-transform: uppercase;">YouTube</a>
+        <a href="https://www.tiktok.com/@user738230671202" target="_blank" style="color: #c5a059 !important; text-decoration: none; font-size: 13px; font-weight: 600; text-transform: uppercase;">TikTok</a>
     </div>
-
     <p style="margin-top:20px; font-size: 11px; opacity: 0.5;">&copy; 2026 All Rights Reserved.</p>
 </footer>
 
-<a class="share-btn" href="https://wa.me/?text=Hi%2C%20here%20is%20Jack%20Interiors%20and%20Fittings%2C%20specialists%20in%20transforming%20residential%20and%20commercial%20spaces%20with%20precision.%20Explore%20our%20portfolio%20at%20Avon%20Centre%2C%20Industrial%20Area.%20Visit%20us%20at%20https%3A%2F%2Fjack.masomo.website%2F" style="background-color: #007bff !important; color: #ffffff !important; border: 2px solid #ffffff !important;" target="_blank" title="Share via WhatsApp">🔗</a>
-
+<a class="share-btn" href="https://wa.me/?text=Check%20out%20our%20Interiors%20and%20Sound%20Proofing%20solutions%20at%20Jack%20Interiors%20and%20Fittings%3A%20https%3A%2F%2Fjack.masomo.website%2F" target="_blank" title="Share via WhatsApp">🔗</a>
 <a class="whatsapp" href="https://wa.me/254703894897" target="_blank" title="Chat on WhatsApp">💬</a>
 
 <script>
