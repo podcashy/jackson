@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Video Gallery & Complete Portfolio | Jack Interiors & Fittings</title>
     <style>
-        /* INLINE CLASSIC EXECUTIVE OVERRIDES */
         body {
             margin: 0;
             font-family: 'Garamond', 'Georgia', serif;
@@ -97,9 +96,7 @@
             border-radius: 4px;
             box-shadow: 0 8px 25px rgba(27, 38, 59, 0.08);
             border-top: 4px solid #c5a059;
-            border-left: 1px solid #dcd7ce;
-            border-right: 1px solid #dcd7ce;
-            border-bottom: 1px solid #dcd7ce;
+            border: 1px solid #dcd7ce;
         }
         .video-card video {
             width: 100%;
@@ -117,7 +114,7 @@
             color: #1b263b;
             letter-spacing: 1px;
         }
-        /* PHOTO GALLERY GRID (1 to 13.jpg) */
+        /* PHOTO GALLERY GRID */
         .photo-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -279,77 +276,19 @@
     </p>
 
     <div class="video-grid">
-        <div class="video-card">
-            <video controls preload="metadata">
-                <source src="v/v1.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <p>Project Walkthrough 1</p>
-        </div>
-
-        <div class="video-card">
-            <video controls preload="metadata">
-                <source src="v/v2.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <p>Project Walkthrough 2</p>
-        </div>
-
-        <div class="video-card">
-            <video controls preload="metadata">
-                <source src="v/v3.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <p>Project Walkthrough 3</p>
-        </div>
-
-        <div class="video-card">
-            <video controls preload="metadata">
-                <source src="v/v4.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <p>Project Walkthrough 4</p>
-        </div>
-
-        <div class="video-card">
-            <video controls preload="metadata">
-                <source src="v/v5.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <p>Project Walkthrough 5</p>
-        </div>
-
-        <div class="video-card">
-            <video controls preload="metadata">
-                <source src="v/v6.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <p>Project Walkthrough 6</p>
-        </div>
-
-        <div class="video-card">
-            <video controls preload="metadata">
-                <source src="v/v7.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <p>Project Walkthrough 7</p>
-        </div>
-
-        <div class="video-card">
-            <video controls preload="metadata">
-                <source src="v/v8.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <p>Project Walkthrough 8</p>
-        </div>
-
-        <div class="video-card">
-            <video controls preload="metadata">
-                <source src="v/v9.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <p>Project Walkthrough 9</p>
-        </div>
+        <script>
+            for(let i = 1; i <= 9; i++) {
+                document.write(`
+                    <div class="video-card">
+                        <video controls preload="metadata">
+                            <source src="v/v${i}.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p>Project Walkthrough ${i}</p>
+                    </div>
+                `);
+            }
+        </script>
     </div>
 
     <h2 style="margin-top: 60px;">Complete Photo Portfolio</h2>
@@ -358,58 +297,46 @@
     </p>
 
     <div class="photo-grid">
-        <div class="photo-card" onclick="openLightbox('d/1.jpg')">
-            <img src="d/1.jpg" alt="Project 1">
-            <p>Portfolio Item 1</p>
-        </div>
-        <div class="photo-card" onclick="openLightbox('d/2.jpg')">
-            <img src="d/2.jpg" alt="Project 2">
-            <p>Portfolio Item 2</p>
-        </div>
-        <div class="photo-card" onclick="openLightbox('d/3.jpg')">
-            <img src="d/3.jpg" alt="Project 3">
-            <p>Portfolio Item 3</p>
-        </div>
-        <div class="photo-card" onclick="openLightbox('d/4.jpg')">
-            <img src="d/4.jpg" alt="Project 4">
-            <p>Portfolio Item 4</p>
-        </div>
-        <div class="photo-card" onclick="openLightbox('d/5.jpg')">
-            <img src="d/5.jpg" alt="Project 5">
-            <p>Portfolio Item 5</p>
-        </div>
-        <div class="photo-card" onclick="openLightbox('d/6.jpg')">
-            <img src="d/6.jpg" alt="Project 6">
-            <p>Portfolio Item 6</p>
-        </div>
-        <div class="photo-card" onclick="openLightbox('d/7.jpg')">
-            <img src="d/7.jpg" alt="Project 7">
-            <p>Portfolio Item 7</p>
-        </div>
-        <div class="photo-card" onclick="openLightbox('d/8.jpg')">
-            <img src="d/8.jpg" alt="Project 8">
-            <p>Portfolio Item 8</p>
-        </div>
-        <div class="photo-card" onclick="openLightbox('d/9.jpg')">
-            <img src="d/9.jpg" alt="Project 9">
-            <p>Portfolio Item 9</p>
-        </div>
-        <div class="photo-card" onclick="openLightbox('d/10.jpg')">
-            <img src="d/10.jpg" alt="Project 10">
-            <p>Portfolio Item 10</p>
-        </div>
-        <div class="photo-card" onclick="openLightbox('d/11.jpg')">
-            <img src="d/11.jpg" alt="Project 11">
-            <p>Portfolio Item 11</p>
-        </div>
-        <div class="photo-card" onclick="openLightbox('d/12.jpg')">
-            <img src="d/12.jpg" alt="Project 12">
-            <p>Portfolio Item 12</p>
-        </div>
-        <div class="photo-card" onclick="openLightbox('d/13.jpg')">
-            <img src="d/13.jpg" alt="Project 13">
-            <p>Portfolio Item 13</p>
-        </div>
+        <script>
+            function renderPhoto(num, ext) {
+                document.write(`
+                    <div class="photo-card" onclick="openLightbox('d/${num}.${ext}')">
+                        <img src="d/${num}.${ext}" alt="Portfolio Item ${num}">
+                        <p>Portfolio Item ${num}</p>
+                    </div>
+                `);
+            }
+
+            // 1. Existing photos 1 to 13 (.jpg)
+            for(let i = 1; i <= 13; i++) {
+                renderPhoto(i, 'jpg');
+            }
+
+            // 2. Added photos 18 to 20 (.jpeg)
+            for(let i = 18; i <= 20; i++) {
+                renderPhoto(i, 'jpeg');
+            }
+
+            // 3. Added photos 21 to 25 (.jpeg)
+            for(let i = 21; i <= 25; i++) {
+                renderPhoto(i, 'jpeg');
+            }
+
+            // 4. Added photos 26 to 34 (.jpeg)
+            for(let i = 26; i <= 34; i++) {
+                renderPhoto(i, 'jpeg');
+            }
+
+            // 5. Added photos 35 to 38 (.jpeg)
+            for(let i = 35; i <= 38; i++) {
+                renderPhoto(i, 'jpeg');
+            }
+
+            // 6. Added photos 39 to 44 (.jpeg)
+            for(let i = 39; i <= 44; i++) {
+                renderPhoto(i, 'jpeg');
+            }
+        </script>
     </div>
 </div>
 
@@ -424,16 +351,17 @@
     <p>Avon Centre, Enterprise Road, Industrial Area – Nairobi | Tel: 0703 894 897, 0728 275 840</p>
     
     <!-- Social Media Links -->
-    <div style="margin: 15px 0; display: flex; justify-content: center; gap: 25px;">
-        <a href="https://www.facebook.com/people/Jack-Interiors-and-Fittings/61592989888671/" target="_blank" style="color: #c5a059 !important; text-decoration: none; font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; transition: opacity 0.3s ease;">Facebook</a>
-        <a href="https://www.instagram.com" target="_blank" style="color: #c5a059 !important; text-decoration: none; font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; transition: opacity 0.3s ease;">Instagram</a>
-        <a href="https://www.youtube.com" target="_blank" style="color: #c5a059 !important; text-decoration: none; font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; transition: opacity 0.3s ease;">YouTube</a>
+    <div style="margin: 15px 0; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+        <a href="https://www.facebook.com/people/Jack-Interiors-and-Fittings/61592989888671/" target="_blank" style="color: #c5a059 !important; text-decoration: none; font-size: 13px; font-weight: 600; text-transform: uppercase;">Facebook</a>
+        <a href="https://www.instagram.com/everlyne5554/" target="_blank" style="color: #c5a059 !important; text-decoration: none; font-size: 13px; font-weight: 600; text-transform: uppercase;">Instagram</a>
+        <a href="https://youtube.com/@everlynemueni-u7p?si=FOhoGtIVku75fcsg" target="_blank" style="color: #c5a059 !important; text-decoration: none; font-size: 13px; font-weight: 600; text-transform: uppercase;">YouTube</a>
+        <a href="https://www.tiktok.com/@user738230671202" target="_blank" style="color: #c5a059 !important; text-decoration: none; font-size: 13px; font-weight: 600; text-transform: uppercase;">TikTok</a>
     </div>
 
     <p style="margin-top:20px; font-size: 11px; opacity: 0.5;">&copy; 2026 All Rights Reserved.</p>
 </footer>
 
-<a class="share-btn" href="https://wa.me/?text=Hi%2C%20here%20is%20Jack%20Interiors%20and%20Fittings%2C%20specialists%20in%20transforming%20residential%20and%20commercial%20spaces%20with%20precision.%20Explore%20our%20portfolio%20at%20Avon%20Centre%2C%20Industrial%20Area.%20Visit%20us%20at%20https%3A%2F%2Fjack.masomo.website%2F" style="background-color: #007bff !important; color: #ffffff !important; border: 2px solid #ffffff !important;" target="_blank" title="Share via WhatsApp">🔗</a>
+<a class="share-btn" href="https://wa.me/?text=Explore%20the%20complete%20portfolio%20of%20Jack%20Interiors%20%26%20Fittings%3A%20https%3A%2F%2Fjack.masomo.website%2F" style="background-color: #007bff !important; color: #ffffff !important; border: 2px solid #ffffff !important;" target="_blank" title="Share via WhatsApp">🔗</a>
 
 <a class="whatsapp" href="https://wa.me/254703894897" target="_blank" title="Chat on WhatsApp">💬</a>
 
