@@ -213,9 +213,10 @@
     <div class="gallery-grid">
         <script>
             for(let i=26; i<=34; i++) {
+                // Image path corrected to root 'd/' folder
                 document.write(`
-                    <div class="gallery-item" onclick="openLightbox('jack/d/${i}.jpeg')">
-                        <img src="jack/d/${i}.jpeg" alt="Gypsum Ceiling Project ${i}">
+                    <div class="gallery-item" onclick="openLightbox('d/${i}.jpeg')">
+                        <img src="d/${i}.jpeg" alt="Gypsum Ceiling Project ${i}">
                     </div>
                 `);
             }
